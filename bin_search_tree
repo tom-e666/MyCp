@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define pii pair<int,int>
+#define pll pair<long long, long long>
+#define vi vector<int>
+#define vl vector<long long>
+#define vb vector<bool>
+#define vll vector<vector<long long>>
+#define fi first
+#define se second
+#define all(x) (x).begin(),(x).end()
+#pragma gcc -optimize("O3")
+using namespace std;
+const int INF=1e9+7;
+int main()
+{
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);cout.tie(0);
+
+
+
+
+}
