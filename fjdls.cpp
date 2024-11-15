@@ -7,24 +7,23 @@ using namespace std;
 #define S second
 #define pii pair<int, int>
 #define vi vector<int>
-signed main()
+const int mod=1e9+7;
+int main()
 {
-	int n,x;
-	cin>>n>>x;
-	int c[n];
-	loop(i,0,n) cin>>c[i];
-	int dp[x+1];
-	fill(dp,dp+x+1,INT_MAX-1);
-
-	dp[0]=0;
-	loop(s,1,x+1)
+	//angry birds
+	int t;
+	int a,b,c;
+	cin>>t;
+	while(t--)
 	{
-		loop(j,0,n)
+		cin>>a>>b>>c;
+		if(c==0)
 		{
-			if(s>=c[j] && dp[s]>dp[s-c[j]]+1) dp[s]=dp[s-c[j]]+1;
+			cout<<"NO CURVE\n";
+		}else if (c>0)
+		{
+			cout<<"CURVE UP\n";
 		}
+		else cout<<"CURVE DOWN\n";
 	}
-	cout<<(dp[x]==INT_MAX-1?-1:dp[x]);
-
-
 }

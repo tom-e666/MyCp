@@ -7,24 +7,24 @@ using namespace std;
 #define S second
 #define pii pair<int, int>
 #define vi vector<int>
+const int mod=1e9+7;
 signed main()
 {
-	int n,x;
-	cin>>n>>x;
-	int c[n];
-	loop(i,0,n) cin>>c[i];
-	int dp[x+1];
-	fill(dp,dp+x+1,INT_MAX-1);
-
+	int n;
+	cin>>n;
+	int dp[n+1];
 	dp[0]=0;
-	loop(s,1,x+1)
+	fill(dp+1,dp+n+1,INT_MAX-10);
+	loop(i,1,n+1)
 	{
-		loop(j,0,n)
+		int t=i;
+		while(t)
 		{
-			if(s>=c[j] && dp[s]>dp[s-c[j]]+1) dp[s]=dp[s-c[j]]+1;
+			if(int c=t%10;i>=c)
+			dp[i]=min(dp[i],dp[i-c]+1);
+			t/=10;
 		}
 	}
-	cout<<(dp[x]==INT_MAX-1?-1:dp[x]);
-
-
-}
+	cout<<dp[n];
+	cerr<<dp[9];
+	}
