@@ -7,24 +7,28 @@ using namespace std;
 #define S second
 #define pii pair<int, int>
 #define vi vector<int>
+vi solve(int n, int k)
+{
+	
+}
 signed main()
 {
-	int n,x;
-	cin>>n>>x;
-	int c[n];
-	loop(i,0,n) cin>>c[i];
-	int dp[x+1];
-	fill(dp,dp+x+1,INT_MAX-1);
-
-	dp[0]=0;
-	loop(s,1,x+1)
+	int n;
+	while(cin>>n && n)
 	{
-		loop(j,0,n)
+		int m=2;
+		while(1)
 		{
-			if(s>=c[j] && dp[s]>dp[s-c[j]]+1) dp[s]=dp[s-c[j]]+1;
+			if(josephus(n,m)==13)
+			{
+				cout<<m<<"\n";
+				break;
+			}
+			else
+			{
+				++m;
+			}
 		}
 	}
-	cout<<(dp[x]==INT_MAX-1?-1:dp[x]);
-
-
+	cerr<<josephus(14,18);
 }

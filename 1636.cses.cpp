@@ -7,24 +7,23 @@ using namespace std;
 #define S second
 #define pii pair<int, int>
 #define vi vector<int>
-signed main()
+const int mod=1e9+7;
+int main()
 {
 	int n,x;
 	cin>>n>>x;
 	int c[n];
 	loop(i,0,n) cin>>c[i];
+	
+	sort(c,c+n);
 	int dp[x+1];
-	fill(dp,dp+x+1,INT_MAX-1);
-
-	dp[0]=0;
-	loop(s,1,x+1)
+	fill(dp,dp+x+1,0);
+	dp[0]=1;
+	loop(ic,0,n)
+	loop(s,c[ic],x+1)
 	{
-		loop(j,0,n)
-		{
-			if(s>=c[j] && dp[s]>dp[s-c[j]]+1) dp[s]=dp[s-c[j]]+1;
-		}
+		dp[s]+=dp[s-c[ic]];
+		dp[s]%=mod;
 	}
-	cout<<(dp[x]==INT_MAX-1?-1:dp[x]);
-
-
+	cout<<dp[x];
 }
